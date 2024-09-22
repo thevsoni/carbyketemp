@@ -21,14 +21,16 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }))
 
 //Routes imports
-// const adminR = require("./routes/adminRoute")
-// const user = require("./routes/userRoute")
-// const location = require("./routes/locationRoute")
+const user = require("./routes/user")
+const admin = require("./routes/admin")
+const location = require("./routes/location")
+const vehicle = require("./routes/vehicle")
 
-// //Routes uses
-// app.use("/api/admin", adminR);
-// app.use("/api/user", user);
-// app.use("/api/location", location);
+//Routes uses
+app.use("/api/user", user);
+app.use("/api/admin", admin);
+app.use("/api/location", location);
+app.use("/api/vehicle", vehicle);
 
 
 //Middleware for errors
